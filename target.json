@@ -1,0 +1,104 @@
+{
+  "name": "frdm-k22f-gcc",
+  "version": "0.1.0",
+  "inherits": {
+    "kinetis-k22f-gcc": "^0.1.0",
+  },
+  "description": "mbed build target for the mbed frdm-k22f development board.",
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
+    }
+  ],
+  "keywords": [
+    "mbed-target:k22f",
+    "mbed",
+    "k22f",
+    "frdm-k22f",
+    "gcc"
+  ],
+  "config": {
+    "mbed-os": {
+      "net": {
+        "stacks": {
+          "lwip": false
+        }
+      }
+    },
+    "hardware": {
+      "pins": {
+        "LED_RED": "PTA1",
+        "LED_GREEN": "PTA2",
+        "LED_BLUE": "PTD5",
+        "LED1": "LED_RED",
+        "LED2": "LED_GREEN",
+        "LED3": "LED_BLUE",
+        "LED4": "LED_RED",
+        "SW2": "PTC1",
+        "SW3": "PTB17",
+        "USBTX": "PTE0",
+        "USBRX": "PTE1",
+        "D0": "PTD2",
+        "D1": "PTD3",
+        "D2": "PTB16",
+        "D3": "PTA2",
+        "D4": "PTA4",
+        "D5": "PTB18",
+        "D6": "PTC3",
+        "D7": "PTC6",
+        "D8": "PTB19",
+        "D9": "PTA1",
+        "D10": "PTD4",
+        "D11": "PTD6",
+        "D12": "PTD7",
+        "D13": "PTD5",
+        "D14": "PTE0",
+        "D15": "PTE1",
+        "I2C_SCL": "D15",
+        "I2C_SDA": "D14",
+        "A0": "PTB0",
+        "A1": "PTB1",
+        "A2": "PTC1",
+        "A3": "PTC2",
+        "A4": "PTB3",
+        "A5": "PTB2",
+        "DAC0_OUT": "0xFEFE"
+      },
+      "test-pins": {
+        "spi": {
+          "mosi": "PTD6",
+          "miso": "PTD7",
+          "sclk": "PTD5",
+          "ssel": "PTD4"
+        },
+        "i2c": {
+          "sda": "PTE0",
+          "scl": "PTE1"
+        },
+        "serial": {
+          "tx": "PTD3",
+          "rx": "PTD2"
+        }
+      }
+    }
+  },
+  "similarTo": [
+    "frdm-k22f"
+  ],
+  "toolchain": "CMake/toolchain.cmake",
+  "scripts": {
+    "debug": [
+      "valinor",
+      "--target",
+      "K22F",
+      "$program"
+    ],
+    "test": [
+      "mbed_test_wrapper",
+      "--target",
+      "K22F",
+      "$program"
+    ]
+  }
+}
