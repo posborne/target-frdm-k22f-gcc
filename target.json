@@ -2,7 +2,7 @@
   "name": "frdm-k22f-gcc",
   "version": "0.1.0",
   "inherits": {
-    "kinetis-k22f-gcc": "^0.1.0",
+    "kinetis-k22f-gcc": "^0.1.0"
   },
   "description": "mbed build target for the mbed frdm-k22f development board.",
   "licenses": [
